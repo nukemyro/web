@@ -1,0 +1,19 @@
+<p>8. SELECT MAX(test.TIME.DAY_DT) FROM test.TIME</p>
+<p>ANSWER: 2021-01-02</p>
+<p>9. 	SELECT COUNT(t1.Counts) FROM
+  (SELECT DISTINCT test.ASSET.ASSET_ID AS Counts
+  FROM            test.ASSET
+  INNER JOIN		test.TIME 
+  ON				test.ASSET.TIME_KEY = test.TIME.TIME_KEY) AS t1</p>
+<p>ANSWER: 8</p>
+<p>10. SELECT COUNT(DISTINCT test.ASSET.ASSET_CLASS)
+  FROM test.ASSET
+  INNER JOIN test.TIME
+  ON test.ASSET.TIME_KEY = test.TIME.TIME_KEY</p>
+<p>11. SELECT COUNT(*)
+  FROM test.ASSET
+  INNER JOIN test.TIME
+  ON test.ASSET.TIME_KEY = test.TIME.TIME_KEY
+  WHERE test.TIME.DAY_DT < '2021-01-01'</p>
+<p>12. create components</p>
+<p>13. The day of the week column is configured for single character and the install script has the full day. Script was corrected to use MTWTFS from full days like 'Monday' to 'M' and then the script executes without complaints.</p>
